@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   //states
@@ -16,7 +16,7 @@ const Navbar = () => {
           setIsNavExpanded(!isNavExpanded);
         }}
       >
-        <GiHamburgerMenu />
+        {isNavExpanded ? <FaTimes /> : <FaBars />}
       </button>
       <div
         className={
