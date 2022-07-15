@@ -1,16 +1,28 @@
-import React from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
+  //states
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+
   return (
     <nav className="navigation">
       <a href="/" className="brand-name">
         Responsive Navbar
       </a>
-      <button className="hamburger">
+      <button
+        className="hamburger"
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}
+      >
         <GiHamburgerMenu />
       </button>
-      <div className="navigation-menu">
+      <div
+        className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }
+      >
         <ul>
           <li>
             <a href="/home">Home</a>
